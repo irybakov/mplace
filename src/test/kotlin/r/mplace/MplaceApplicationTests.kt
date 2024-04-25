@@ -1,4 +1,4 @@
-package rio.mplace
+package r.mplace
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

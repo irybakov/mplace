@@ -1,4 +1,4 @@
-package rio.mplace
+package r.mplace
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

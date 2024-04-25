@@ -7,7 +7,7 @@ plugins {
 	kotlin("plugin.spring") version "1.9.23"
 }
 
-group = "rio"
+group = "r"
 version = "0.0.1-SNAPSHOT"
 
 java {
