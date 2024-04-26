@@ -26,7 +26,7 @@ dependencies {
   	implementation("org.springframework.boot:spring-boot-starter-jetty")
 
 	implementation("org.springframework.boot:spring-boot-starter-actuator:3.2.5")
-	implementation("org.springframework.boot:spring-boot-starter-security:3.2.5")
+	//implementation("org.springframework.boot:spring-boot-starter-security:3.2.5")
 	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 
 

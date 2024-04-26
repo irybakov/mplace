@@ -7,10 +7,10 @@ import org.springframework.http.ResponseEntity
 
 @RestController
 @RequestMapping("/ads")
-class AdsController(val repo: AdsRepository) {
+class AdsController(private val repo: AdsRepository) {
 
     @GetMapping
-    fun findAll() {
-        ResponseEntity.ok(repo.findAll())
+    fun findAll(): List<Ad> {
+        return repo.findAll().toList()
     }
 }
