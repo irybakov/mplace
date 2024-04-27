@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mplace-image
+  labels:
+    app: mplace-image
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+  clusterIP: None
+  selector:
+    app: mplace-image
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mplace-image
+  labels:
+    app: mplace-image
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mplace-image
+  template:
+    metadata:
+      labels:
+        app: mplace-image
+    spec:
+      containers:
+      - name: mplace-image
+        image: mplace-image

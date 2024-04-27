@@ -1,6 +1,7 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+    id("com.google.cloud.tools.jib")  version "3.4.2"
 	id("org.springframework.boot") version "3.2.5"
 	id("io.spring.dependency-management") version "1.1.4"
 	kotlin("jvm") version "1.9.23"
@@ -11,6 +12,9 @@ group = "r"
 version = "0.0.1-SNAPSHOT"
 
 java {
+	toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 	sourceCompatibility = JavaVersion.VERSION_21
 }
 
@@ -50,4 +54,17 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+jib {
+	from {
+		image = "openjdk:22-jdk-slim"
+	}
+	to {
+		image = "mplace-image"
+	}
+	container {
+		jvmFlags = listOf("-Xms512m") 
+		ports = listOf("8080")
+	}
 }
