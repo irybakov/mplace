@@ -5,6 +5,7 @@
 build
 .gradle/
 .DS_Store/
+.vscode/
 
 # Log file
 *.log
